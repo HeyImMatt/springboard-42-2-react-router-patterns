@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import Colors from './Colors'
+import ColorPage from './ColorPage'
 import './App.css';
 
 export default function App() {
@@ -10,13 +11,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        {/* <Route exact path='/colors/:name'>
-          
-        </Route> */}
+        <Route exact path='/colors/:color'>
+          <ColorPage colors={colors} />
+        </Route>
         <Route exact path='/colors'>
           <Colors colors={colors} />
         </Route>
-        <Redirect to='/'></Redirect>
+        <Redirect to='/colors'></Redirect>
       </Switch>
     </BrowserRouter>
   );

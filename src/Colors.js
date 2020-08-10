@@ -10,7 +10,7 @@ export default function Colors( { colors } ) {
       </div>
       <h5>Please select a color:</h5>
       <ul>
-        {colors.map((color, idx) => (<a href={color}><li key={idx}>{color}</li></a>))}
+        {colors.map((color, idx) => (<a href={`/colors/${color}`}><li key={idx}>{color}</li></a>))}
       </ul>
     </div>
   )
