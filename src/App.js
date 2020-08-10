@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import DogList from './DogList'
 import DogDetails from './DogDetails'
 import duke from './duke.jpg';
@@ -22,12 +22,13 @@ function App() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path='/dogs'>
-            <DogList dogs={App.defaultProps.dogs.map((dog) => ({name: dog.name, src: dog.src}))} />
-          </Route>
           <Route exact path='/dogs/:name'>
             <DogDetails getDog={getDog} />
           </Route>
+          <Route exact path='/dogs'>
+            <DogList dogs={App.defaultProps.dogs.map((dog) => ({name: dog.name, src: dog.src}))} />
+          </Route>
+          <Redirect to='/dogs'></Redirect>
         </Switch>
       </BrowserRouter>
     );
