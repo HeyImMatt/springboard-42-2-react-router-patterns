@@ -9,7 +9,7 @@ export default class DogList extends React.Component {
         <ul>
           {this.props.dogs.map((dog, idx) => (
             <>
-              <a href={`dogs/${dog.name.toLowerCase()}`} key={idx}>
+              <a href={`/dogs/${dog.name.toLowerCase()}`} key={idx}>
                 <li>{dog.name}</li>
                 <img src={dog.src} alt={dog.name}></img>
               </a>
